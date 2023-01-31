@@ -30,5 +30,8 @@ body{
 
 /*List Header*/
 .list-header{
-
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: rgb(0, 0, 0,0.05) 1px solid;
 }
