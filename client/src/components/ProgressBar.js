@@ -1,5 +1,5 @@
 function ProgressBar() {
-  return <div className="App">Rama</div>;
+  return <div></div>;
 }
 
 export default ProgressBar;
