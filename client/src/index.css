@@ -28,6 +28,49 @@ body{
   background-color: transparent;
 }
 
+.edit{
+  border: 1.5px solid rgb(141, 181, 145);
+  color: rgb(141, 181, 145) ;
+  text-transform: uppercase;
+}
+
+.edit:hover{
+  /* background-color: rgb(182, 223, 186); */
+  border-color: rgb(1, 178, 19);
+  color: rgb(1, 178, 19);
+  font-weight: 600;
+}
+
+.delete, .signout{
+  border: 1.5px solid rgb(255, 175, 163);
+  color: rgb(255, 175, 163) ;
+  text-transform: uppercase;
+}
+.delete:hover, .signout:hover{
+  /* background-color: rgb(182, 223, 186); */
+  border-color: rgb(243, 48, 18) ;
+  color: rgb(243, 48, 18) ;
+  font-weight: 600;
+}
+
+.create{
+  border: 1.5px solid rgb(108, 115, 148);
+  color:rgb(108, 115, 148) ;
+  text-transform: uppercase;
+}
+
+.create:hover{
+  /* background-color: rgb(182, 223, 186); */
+  border-color: rgb(2, 26, 143) ;
+  color: rgb(2, 26, 143) ;
+  font-weight: 600;
+}
+
+/* .signout{
+  border: 1.5px solid rgb(255, 175, 163);
+  color: rgb(255, 175, 163);
+} */
+
 /*List Header*/
 .list-header{
   width: 100%;
