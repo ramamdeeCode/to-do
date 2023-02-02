@@ -11,11 +11,14 @@ function Modal({ setShowModal, mode, task, getData }) {
   const postData = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8000/todos/`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVERURL}/todos/`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
       if (response.status === 200) {
         console.log("worked");
         setShowModal(false);
@@ -29,11 +32,14 @@ function Modal({ setShowModal, mode, task, getData }) {
   const editData = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:8000/todos/${task.id}`, {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVERURL}/todos/${task.id}`,
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        }
+      );
       if (response.status === 200) {
         console.log("worked");
         setShowModal(false);

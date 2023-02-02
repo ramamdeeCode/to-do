@@ -8,10 +8,13 @@ function ListItem({ task, getData }) {
 
   const deleteItem = async () => {
     try {
-      const response = await fetch(`http://localhost:8000/todos/${task.id}`, {
-        method: "DELETE",
-      });
-      if (response.status == 200) {
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVERURL}/todos/${task.id}`,
+        {
+          method: "DELETE",
+        }
+      );
+      if (response.status === 200) {
         getData();
       }
     } catch (err) {
