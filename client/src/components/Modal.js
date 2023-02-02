@@ -26,6 +26,24 @@ function Modal({ setShowModal, mode, task, getData }) {
     }
   };
 
+  const editData = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(`http://localhost:8000/todos/${task.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (response.status === 200) {
+        console.log("worked");
+        setShowModal(false);
+        getData();
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const handleChange = (e) => {
     console.log("changing", e);
     const { name, value } = e.target;
@@ -67,7 +85,7 @@ function Modal({ setShowModal, mode, task, getData }) {
           <input
             className={mode}
             type="submit"
-            onClick={editMode ? "" : postData}
+            onClick={editMode ? editData : postData}
           />
         </form>
       </div>
